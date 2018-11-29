@@ -1,0 +1,9 @@
+1. Open a new shell
+2. Get and save the ip address of Aiur
+	docker-machine ip Aiur
+3. ssh into Aiur
+	docker-machine ssh Aiur
+4. in the shell opened in Char copy the result of the command
+	docker swarm join-token worker
+5. The result of the above command should resemble "    docker swarm join --token SWMTKN-1-4z7d4v9s38pezunxqthcrpb6s217a4zdomc4msxmic3edq6w66-c79tllhjoaz5qbr30pvzj0s2q 192.168.99.100:2377"
+	paste this in to the shell openend at Aiur

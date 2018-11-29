@@ -1,0 +1,7 @@
+1. Get and save the ip address of Char
+	docker-machine ip Char
+2. ssh into Char 
+	docker-machine ssh Char
+3. initialize Char as the master node 
+	docker swarm init --advertise-addr <CHAR_IP_ADDRESS>
+

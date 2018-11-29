@@ -1,4 +1,4 @@
-docker run -it --name Abathur -v /Users/patrick:/root --publish 3000:3000 python:2-slim bash
+docker run -it --name Abathur -v $PWD/HOME:/root --publish 3000:3000 python:2-slim bash
 #Once inside the containers shell execute the following commands
 #1. pip install flask
 #2. python 

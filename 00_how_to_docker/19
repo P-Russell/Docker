@@ -1,0 +1,11 @@
+docker run -it --name Abathur -v /Users/patrick:/root --publish 3000:3000 python:2-slim bash
+#Once inside the containers shell execute the following commands
+#1. pip install flask
+#2. python 
+#3. from flask import Flask
+#4. app = Flask(__name__)
+#5. @app.route('/')
+#6. def hello():
+#7. \t return '<h1>Hello World</h1>'
+#8. press enter again
+#9. app.run(host='0.0.0.0',port=3000)

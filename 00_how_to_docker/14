@@ -1,7 +1,14 @@
 # docker run --name some-wordpress --link some-mysql:mysql -p 8080:80 -d wordpress
 # WORDPRESS_DB_USER=fvhemert -e WORDPRESS_DB_PASSWORD=usrpassword -e WORDPRESS_DB_NAME=wordpress
 
+#docker run --name spawning-pool -e MYSQL_DATABASE=zerglings \
+#-e MYSQL_ROOT_PASSWORD=Kerrigan \
+#-v hatchery:/var/lib/mysql --restart on-failure -d mysql:latest
+
 docker run --name lair --publish 8080:80 --link spawning-pool:mysql \
--e WORDPRESS_DB_PASSWORD=Kerrigan \
 -e WORDPRESS_DB_NAME=zerglings \
- -detach wordpress:latest
+-e WORDPRESS_DB_HOST=spawning-pool:3306 \
+-e WORDPRESS_DB_PASSWORD=wordpress \
+-e WORDPRESS_DB_USER=wordpress \
+--restart on-failure \
+--detach wordpress:latest
